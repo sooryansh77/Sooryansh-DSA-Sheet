@@ -233,7 +233,47 @@ public class Patterns {
         }
     }
 
+    public static void Q19(int n){
+        //UPPER HALF
+        for(int i=0; i<n; i++){
+            //RIGHT STARS
+            for(int j=0; j<=(n-i-1); j++){
+                System.out.print("*");
+            }
+
+            //SPACES
+            for(int j=0; j<(2*i); j++){
+                System.out.print(" ");
+            }
+
+            //LEFT STARS
+            for(int j=0; j<=(n-i-1); j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        //LOWER HALF
+        for(int i=0; i<n; i++){
+            //RIGHT STARS
+            for(int j=0; j<=i; j++){
+                System.out.print("*");
+            }
+
+            //SPACES
+            for(int j=0; j<(2*n-2-2*i); j++){
+                System.out.print(" ");
+            }
+
+            //LEFT STARS
+            for(int j=0; j<=i; j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
-        Q18_alternate(5);
+        Q19(5);
     }
 }

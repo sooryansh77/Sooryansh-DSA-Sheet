@@ -188,7 +188,33 @@ public class Patterns {
         }
     }
 
+    public static void Q17(int n){
+
+        for(int i=0; i<n; i++){
+            // For spaces
+            for(int j=0; j<(n-i-1); j++){
+                System.out.print(" ");
+            }
+
+            char c = 'A';
+            int breakpoint = (2*i + 1) / 2;
+            /*
+            * Till half the number of elements in the row (2i + 1), increment,
+            * after that decrement. (c)*/
+            for(int j=1; j<=(2*i + 1); j++){
+                System.out.print(c);
+                if(j <= breakpoint){
+                    c++;
+                }
+                else{
+                    c--;
+                }
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
-        Q16(5);
+        Q17(4);
     }
 }

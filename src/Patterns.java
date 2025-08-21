@@ -366,9 +366,51 @@ public class Patterns {
         }
     }
 
+    public static void Q22(int n){
+        /*
+        * First convert the higher layer matrix for eg.
+        * 4 4 4 4 4 4 4
+          4 3 3 3 3 3 4
+          4 3 2 2 2 3 4
+          4 3 2 1 2 3 4
+          4 3 2 2 2 3 4
+          4 3 3 3 3 3 4
+          4 4 4 4 4 4 4
+          To basic form
+            0 0 0 0 0 0 0
+            0 1 1 1 1 1 0
+            0 1 2 2 2 1 0
+            0 1 2 3 2 1 0
+            0 1 2 2 2 1 0
+            0 1 1 1 1 1 0
+            0 0 0 0 0 0 0
+
+         Then calculate top, bottom, left and right.
+         * and then calculate the minimum distance of that point among them.
+         * That is the value of that place digit.
+         *
+         * and then return the original matrix by just subtracting n.
+         *
+
+*
+        * */
+        for(int i=0; i<2*n-1; i++){
+            for(int j=0; j<2*n-1; j++){
+
+                int top = i;
+                int bottom = 2*n-2 - i;
+                int left = j;
+                int right = 2*n-2 - j;
+                int digit = Math.min(Math.min(top,bottom), Math.min(left, right));
+                System.out.print(digit + " ");
+            }
+            System.out.println();
+        }
+    }
+
 
 
     public static void main(String[] args) {
-        Q21(4);
+        Q22(4);
     }
 }

@@ -236,7 +236,7 @@ public class Patterns {
     public static void Q19(int n){
         //UPPER HALF
         for(int i=0; i<n; i++){
-            //RIGHT STARS
+            //LEFT STARS
             for(int j=0; j<=(n-i-1); j++){
                 System.out.print("*");
             }
@@ -246,7 +246,7 @@ public class Patterns {
                 System.out.print(" ");
             }
 
-            //LEFT STARS
+            //RIGHT STARS
             for(int j=0; j<=(n-i-1); j++){
                 System.out.print("*");
             }
@@ -255,7 +255,7 @@ public class Patterns {
 
         //LOWER HALF
         for(int i=0; i<n; i++){
-            //RIGHT STARS
+            //LEFT STARS
             for(int j=0; j<=i; j++){
                 System.out.print("*");
             }
@@ -265,7 +265,7 @@ public class Patterns {
                 System.out.print(" ");
             }
 
-            //LEFT STARS
+            //RIGHT STARS
             for(int j=0; j<=i; j++){
                 System.out.print("*");
             }
@@ -273,7 +273,87 @@ public class Patterns {
         }
     }
 
+    public static void Q20(int n){
+        for(int i=0; i<n; i++){
+
+            //LEFT STARS
+            for(int j=0; j<=i; j++){
+                System.out.print("*");
+            }
+
+            //SPACES
+            for(int j=0; j<(2*n - 2 - 2*i); j++){
+                System.out.print(" ");
+            }
+
+            //RIGHT STARS
+            for(int j=0; j<=i; j++){
+                System.out.print("*");
+            }
+            System.out.println();
+
+        }
+        //LOWER HALF
+        int spaces = 2;
+        for(int i=0; i<n-1; i++){
+            //LEFT STARS
+            for(int j=0; j<(n-i-1); j++){
+                System.out.print("*");
+            }
+
+            //SPACES
+            for(int j=0; j<spaces; j++){
+                System.out.print(" ");
+            }
+            spaces += 2;
+
+            //RIGHT STARS
+            for(int j=0; j<(n-i-1); j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+    public static void Q20_alternate(int n){
+        int stars;
+        int spaces = 2*n - 2;
+        for(int i=1; i<=(2*n-1); i++){
+
+            if(i <= n){
+                stars = i;
+            }
+            else{
+                stars = 2*n - i;
+            }
+            //stars
+            for(int j=1; j<=stars; j++){
+                System.out.print("*");
+            }
+
+            //spaces
+            for(int j=1; j<=spaces; j++){
+                System.out.print(" ");
+            }
+
+            //stars
+            for(int j=1; j<=stars; j++){
+                System.out.print("*");
+            }
+
+            System.out.println();
+            if(i<n){
+                spaces -= 2;
+            }
+            else{
+                spaces += 2;
+            }
+        }
+
+    }
+
+
+
     public static void main(String[] args) {
-        Q19(5);
+        Q20_alternate(5);
     }
 }

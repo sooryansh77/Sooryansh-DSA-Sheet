@@ -214,7 +214,26 @@ public class Patterns {
         }
     }
 
+    public static void Q18(int n){
+        char c = 'E';
+        for(int i=0; i<n; i++){
+            for(int j=0; j<=i; j++){
+                System.out.print((char)(c - i + j));
+            }
+            System.out.println();
+        }
+    }
+    public static void Q18_alternate(int n){
+
+        for(int i=0; i<n; i++){
+            for(char c=(char)('E'-i); c<='E'; c++){ //Alternate loop using character as iterator itself.
+                System.out.print(c + " ");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
-        Q17(4);
+        Q18_alternate(5);
     }
 }

@@ -402,7 +402,7 @@ public class Patterns {
                 int left = j;
                 int right = 2*n-2 - j;
                 int digit = Math.min(Math.min(top,bottom), Math.min(left, right));
-                System.out.print(digit + " ");
+                System.out.print(n-digit + " ");
             }
             System.out.println();
         }
